@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Garden Zanzibar | Премиальные апартаменты в Нунгви с водопадом</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#061410',
+                            900: '#0a1e18',
+                            800: '#112f26',
+                            700: '#184437',
+                            600: '#225d4c',
+                        },
+                        gold: {
+                            300: '#f6e5a0',
+                            400: '#e9cb72',
+                            500: '#d4af37',
+                            600: '#b89428',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #061410;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #184437;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9D2 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.09) 1px, transparent 0);
+            background-size: 36px 36px;
+        }
+    </style>
+</head>
+<body class="bg-emerald-950 text-slate-200 font-sans antialiased selection:bg-gold-500 selection:text-emerald-950">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-emerald-950/90 backdrop-blur-md border-b border-emerald-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-2xl border border-gold-500/60 flex items-center justify-center bg-emerald-900 shadow-lg shadow-gold-500/10 group-hover:border-gold-400 transition-colors">
+                    <i class="fa-solid fa-water text-gold-500 text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-display tracking-wider text-xl font-extrabold text-white uppercase block leading-none">Hidden Garden</span>
+                    <span class="text-[11px] tracking-[0.25em] text-gold-400 uppercase font-semibold">Zanzibar • Nungwi</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-gold-400 transition-colors">О комплексе</a>
+                <a href="#gallery" class="hover:text-gold-400 transition-colors">Галерея</a>
+                <a href="#layouts" class="hover:text-gold-400 transition-colors">Планировки</a>
+                <a href="#location" class="hover:text-gold-400 transition-colors">Локация</a>
+                <a href="#calculator" class="hover:text-gold-400 transition-colors">Калькулятор ROI</a>
+                <a href="#steps" class="hover:text-gold-400 transition-colors">Этапы & ВНЖ</a>
+                <a href="#faq" class="hover:text-gold-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/255000000000" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-emerald-700 bg-emerald-900/60 hover:bg-emerald-800 text-gold-400 hover:text-white transition-all text-xs uppercase tracking-wider font-semibold">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp
+                </a>
+                <button onclick="openLeadModal('Заказ консультации по инвестициям')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 transition-all transform hover:-translate-y-0.5">
+                    Консультация
+                </button>
+                <button id="mobileMenuBtn" class="lg:hidden text-2xl text-gold-400 ml-1 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-emerald-950/98 border-b border-emerald-800/80 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col gap-3.5 text-sm font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">О комплексе</a>
+                <a href="#gallery" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Галерея фото</a>
+                <a href="#layouts" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Планировки и Цены</a>
+                <a href="#location" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Инфраструктура & Локация</a>
+                <a href="#calculator" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Калькулятор дохода</a>
+                <a href="#steps" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Безопасность сделки & ВНЖ</a>
+                <a href="#faq" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Частые вопросы</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-24 flex items-center justify-center overflow-hidden hero-pattern">
+        <!-- Hero Background Image with High Quality Oceanfront Villa & Turquoise Sea -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2400&q=85" alt="Zanzibar Luxury Beachfront Real Estate" class="w-full h-full object-cover object-center scale-100 transform duration-1000 filter brightness-95">
+            <!-- Balanced Dual Gradient to emphasize the villa & ocean while maintaining text legibility -->
+            <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/75 via-emerald-950/65 to-emerald-950/95 backdrop-blur-[1px]"></div>
+            <div class="absolute inset-0 bg-radial-at-c from-transparent via-emerald-950/40 to-emerald-950/90"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-900/90 border border-gold-500/50 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-6 shadow-inner backdrop-blur-md">
+                <i class="fa-solid fa-gem text-xs"></i> Эксклюзивный курортный комплекс на первой линии океана
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-7xl font-display font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight sm:leading-tight lg:leading-[1.15] mb-6">
+                Hidden Garden Zanzibar: <span class="gold-gradient-text block mt-2">Виллы и апартаменты премиум-класса на берегу океана</span>
+            </h1>
+
+            <p class="text-slate-200 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                5-этажный отельный курорт в сердце Нунгви (Nungwi). Пляж с кристально чистой лазурной водой без выраженных отливов. Пассивный доход в USD до 15-18% годовых и оформление ВНЖ для всей семьи.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <button onclick="openLeadModal('Скачать презентацию и каталог лотов')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold text-sm uppercase tracking-wider shadow-xl shadow-gold-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-arrow-down text-base"></i> Получить презентацию и прайс
+                </button>
+                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-emerald-700 bg-emerald-900/80 hover:bg-emerald-800 text-white font-semibold text-sm uppercase tracking-wider backdrop-blur transition-all flex items-center justify-center gap-2.5">
+                    <i class="fa-solid fa-calculator text-gold-400"></i> Рассчитать доходность
+                </a>
+            </div>
+
+            <!-- Key Metric Counters Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-emerald-950/80 border border-emerald-800/80 backdrop-blur-md p-6 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/60 shadow-lg">
+                    <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">600 м</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1.5 block font-semibold">Пляж Nungwi</span>
+                    <span class="text-xs text-emerald-400 block mt-1">Океан 24/7 без отливов</span>
+                </div>
+                <div class="bg-emerald-950/80 border border-emerald-800/80 backdrop-blur-md p-6 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/60 shadow-lg">
+                    <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">15–18%</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1.5 block font-semibold">Прогнозируемый ROI</span>
+                    <span class="text-xs text-emerald-400 block mt-1">Чистый валютный доход</span>
+                </div>
+                <div class="bg-emerald-950/80 border border-emerald-800/80 backdrop-blur-md p-6 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/60 shadow-lg">
+                    <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">от 40%</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1.5 block font-semibold">Первый взнос</span>
+                    <span class="text-xs text-emerald-400 block mt-1">0% рассрочка на период стройки</span>
+                </div>
+                <div class="bg-emerald-950/80 border border-emerald-800/80 backdrop-blur-md p-6 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/60 shadow-lg">
+                    <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">от $100k</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1.5 block font-semibold">ВНЖ Танзании</span>
+                    <span class="text-xs text-emerald-400 block mt-1">Государственная программа</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery / Lightbox Section -->
+    <section id="gallery" class="py-24 bg-emerald-900/40 relative border-t border-emerald-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-display font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Атмосфера и Архитектура</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-4">Жизнь в тропическом оазисе</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Нажмите на любое фото, чтобы открыть его в высоком разрешении и оценить уровень материалов, интерьеры и пляжи Нунгви.
+                </p>
+            </div>
+
+            <!-- Mosaic Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo 1: Beach -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85', 'Пляж Нунгви с лазурной водой без отливов (600 м от комплекса)')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Пляж Нунгви Занзибар" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Океан</span>
+                            <h3 class="text-white font-display font-bold text-base">Белоснежный пляж Нунгви</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+
+                <!-- Photo 2: Luxury Pool & Resort -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=85', 'Инфинити-бассейн с тропическим озеленением')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Инфинити-бассейн" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Резорт</span>
+                            <h3 class="text-white font-display font-bold text-base">Инфинити-бассейн & Лаунж</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+
+                <!-- Photo 3: Interior Suite -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=85', 'Дизайнерский номер люкс с натуральным деревом и камнем')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Интерьеры апартаментов" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Интерьер</span>
+                            <h3 class="text-white font-display font-bold text-base">Люкс с террасой</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+
+                <!-- Photo 4: Waterfall Atrium -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85', 'Каскадный водопад во внутреннем саду отеля')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Водопад во дворе" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Сердце отеля</span>
+                            <h3 class="text-white font-display font-bold text-base">5-уровневый каскадный водопад</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+
+                <!-- Photo 5: Sunset View -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=85', 'Знаменитые закаты Нунгви — лучшие на всем Занзибаре')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Закат на Занзибаре" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Природа</span>
+                            <h3 class="text-white font-display font-bold text-base">Панорамные закаты над океаном</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+
+                <!-- Photo 6: Spa & Relax -->
+                <div onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=85', 'SPA зона и ресторан на крыше комплекса')" class="group relative h-72 rounded-3xl overflow-hidden cursor-pointer border border-emerald-700/60 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="SPA и релакс" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+                        <div>
+                            <span class="text-[11px] font-bold text-gold-400 uppercase tracking-wider block mb-1">Сервис</span>
+                            <h3 class="text-white font-display font-bold text-base">SPA & Панорамный ресторан</h3>
+                        </div>
+                        <span class="w-9 h-9 rounded-full bg-emerald-900/80 border border-gold-500/50 flex items-center justify-center text-gold-400 text-xs"><i class="fa-solid fa-expand"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Island Map Section -->
+    <section id="location" class="py-24 bg-emerald-950 relative border-t border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-display font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Локация #1 на Занзибаре</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
+                        Север острова: Нунгви и Кендва
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6 font-normal">
+                        Почему именно Нунгви? Это единственное побережье на острове, где глубина и рельеф дна позволяют купаться в любое время суток: океан не уходит на сотни метров, как на востоке острова. Именно поэтому средняя загрузка отелей здесь превышает 75-80% круглый год.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-emerald-900/50 border border-emerald-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold text-sm">
+                                600м
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Пляж Nungwi Beach</h4>
+                                <p class="text-xs text-slate-400">Белый песок, купание без приливов и отливов, рестораны на берегу.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-emerald-900/50 border border-emerald-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold text-sm">
+                                5 мин
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Пляж Kendwa</h4>
+                                <p class="text-xs text-slate-400">Элитные пляжные клубы, яхтинг, вечеринки Full Moon Party.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-emerald-900/50 border border-emerald-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold text-sm">
+                                15 мин
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Атолл Мне́мба (Mnemba Atoll)</h4>
+                                <p class="text-xs text-slate-400">Лучший дайвинг и снорклинг в Восточной Африке, дельфины.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3.5 rounded-2xl bg-emerald-900/50 border border-emerald-800/80">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold text-sm">
+                                60 мин
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Stone Town & Международный Аэропорт (ZNZ)</h4>
+                                <p class="text-xs text-slate-400">Прямые рейсы со всего мира, историческое наследие ЮНЕСКО.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openLeadModal('Заказ трансфера и локационного тура')" class="px-6 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-all">
+                        Записаться на онлайн-тур по локации
+                    </button>
+                </div>
+
+                <!-- Interactive Visual Map Card -->
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-3xl overflow-hidden border border-gold-500/40 bg-emerald-900 shadow-2xl p-6 sm:p-8">
+                        <div class="flex items-center justify-between pb-6 border-b border-emerald-800/80 mb-6">
+                            <div>
+                                <span class="text-xs text-gold-400 font-bold uppercase tracking-wider">Карта Занзибара</span>
+                                <h3 class="text-white font-display font-bold text-xl">Северная ривьера острова</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-950 border border-gold-500/40 text-gold-400 text-xs font-semibold">
+                                <i class="fa-solid fa-location-dot mr-1"></i> Нунгви
+                            </span>
+                        </div>
+
+                        <!-- Stylized Map Visualizer -->
+                        <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden bg-emerald-950 border border-emerald-800 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80" alt="Карта Занзибара океан" class="absolute inset-0 w-full h-full object-cover opacity-40 filter contrast-125">
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/40 to-transparent"></div>
+
+                            <!-- Pins -->
+                            <div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group cursor-pointer">
+                                <div class="w-12 h-12 rounded-full bg-gold-500 border-4 border-emerald-950 flex items-center justify-center text-emerald-950 text-base font-extrabold shadow-2xl animate-bounce">
+                                    <i class="fa-solid fa-hotel"></i>
+                                </div>
+                                <div class="mt-2 bg-emerald-950/95 border border-gold-500/60 px-3 py-1.5 rounded-xl shadow-lg">
+                                    <p class="text-xs font-bold text-gold-400">Hidden Garden</p>
+                                    <p class="text-[10px] text-white">600м до пляжа</p>
+                                </div>
+                            </div>
+
+                            <div class="absolute top-1/3 left-1/4 text-center">
+                                <div class="w-8 h-8 rounded-full bg-emerald-800/90 border border-gold-400/60 flex items-center justify-center text-gold-400 text-xs">
+                                    <i class="fa-solid fa-umbrella-beach"></i>
+                                </div>
+                                <span class="text-[10px] text-slate-200 mt-1 block font-semibold">Kendwa Rocks</span>
+                            </div>
+
+                            <div class="absolute top-1/4 right-1/4 text-center">
+                                <div class="w-8 h-8 rounded-full bg-emerald-800/90 border border-gold-400/60 flex items-center justify-center text-gold-400 text-xs">
+                                    <i class="fa-solid fa-fish"></i>
+                                </div>
+                                <span class="text-[10px] text-slate-200 mt-1 block font-semibold">Mnemba Reef</span>
+                            </div>
+
+                            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                                <div class="w-8 h-8 rounded-full bg-emerald-800/90 border border-gold-400/60 flex items-center justify-center text-gold-400 text-xs mx-auto">
+                                    <i class="fa-solid fa-plane-departure"></i>
+                                </div>
+                                <span class="text-[10px] text-slate-200 mt-1 block font-semibold">Аэропорт ZNZ (60 км)</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+                            <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Прямой подъезд по асфальтированной дороге</span>
+                            <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Развитая туристическая инфраструктура</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Steps / Safety Section -->
+    <section id="steps" class="py-24 bg-emerald-900/30 relative border-t border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-display font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Безопасность и Законность</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-4">4 шага к оформлению недвижимости и ВНЖ</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Полное юридическое сопровождение по стандартам ZIPA (Агентство содействия инвестициям Занзибара). Удаленная или очная сделка.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-3xl bg-emerald-950/80 border border-emerald-800/80 hover:border-gold-500/50 transition duration-300">
+                    <span class="font-display text-4xl font-extrabold text-gold-500/30 block mb-3">01</span>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Выбор апартаментов</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Подбор оптимального лота, фиксация цены и бронирование ($2,000) с подписанием соглашения о резерве.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-emerald-950/80 border border-emerald-800/80 hover:border-gold-500/50 transition duration-300">
+                    <span class="font-display text-4xl font-extrabold text-gold-500/30 block mb-3">02</span>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Контракт и взнос 40%</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Подписание официального договора купли-продажи с регистрацией в земельном кадастре и оплата 1-го взноса.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-emerald-950/80 border border-emerald-800/80 hover:border-gold-500/50 transition duration-300">
+                    <span class="font-display text-4xl font-extrabold text-gold-500/30 block mb-3">03</span>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">0% Рассрочка</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Оставшиеся 60% вносятся комфортными равными долями по ходу строительных работ без скрытых переплат.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-emerald-950/80 border border-emerald-800/80 hover:border-gold-500/50 transition duration-300">
+                    <span class="font-display text-4xl font-extrabold text-gold-500/30 block mb-3">04</span>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Ключи, ВНЖ и Доход</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Передача ключей, оформление ВНЖ инвестора для всей семьи и запуск отельного управления с выплатами в USD.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Messenger Quick-Bar -->
+    <div class="fixed bottom-6 left-6 z-40 flex items-center gap-2.5">
+        <a href="https://wa.me/255000000000" target="_blank" class="w-13 h-13 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl flex items-center justify-center transform hover:scale-110 transition duration-300">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://t.me/" target="_blank" class="w-13 h-13 p-3.5 rounded-full bg-sky-600 hover:bg-sky-500 text-white shadow-2xl flex items-center justify-center transform hover:scale-110 transition duration-300">
+            <i class="fa-brands fa-telegram text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="imageLightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md" onclick="closeLightbox()">
+        <div class="relative max-w-5xl w-full" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white text-3xl hover:text-gold-400 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightboxImg" src="" alt="Enlarged" class="w-full max-h-[80vh] object-contain rounded-2xl border border-gold-500/40 shadow-2xl">
+            <p id="lightboxCaption" class="text-center text-sm font-semibold text-slate-200 mt-4"></p>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            const box = document.getElementById('imageLightbox');
+            const img = document.getElementById('lightboxImg');
+            const cap = document.getElementById('lightboxCaption');
+            img.src = src;
+            cap.textContent = caption || '';
+            box.classList.remove('hidden');
+            box.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const box = document.getElementById('imageLightbox');
+            box.classList.add('hidden');
+            box.classList.remove('flex');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#071612',
+                            900: '#0c221d',
+                            800: '#14382e',
+                            700: '#1c4a3d',
+                            600: '#276251',
+                        },
+                        gold: {
+                            300: '#f5e49f',
+                            400: '#e6c86e',
+                            500: '#D4AF37',
+                            600: '#b89428',
+                            700: '#8c6e17',
+                        },
+                        sand: {
+                            50: '#faf7f2',
+                            100: '#f4ece1',
+                            200: '#e5d7c3',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar & glassmorphism accents */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #071612;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c4a3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(135deg, rgba(212,175,55,0.6), rgba(212,175,55,0.1)) 1;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-emerald-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-emerald-950">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-emerald-950/85 backdrop-blur-md border-b border-emerald-800/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold-500/60 flex items-center justify-center bg-emerald-900 shadow-lg shadow-gold-500/10 group-hover:border-gold-400 transition-colors">
+                    <i class="fa-solid fa-water text-gold-500 text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif tracking-widest text-lg font-bold text-white uppercase block leading-none">Hidden Garden</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-400 uppercase font-semibold">Zanzibar • Nungwi</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-gold-400 transition-colors">О проекте</a>
+                <a href="#waterfall" class="hover:text-gold-400 transition-colors">Водопад & Локация</a>
+                <a href="#layouts" class="hover:text-gold-400 transition-colors">Планировки</a>
+                <a href="#amenities" class="hover:text-gold-400 transition-colors">Инфраструктура</a>
+                <a href="#calculator" class="hover:text-gold-400 transition-colors">Калькулятор ROI</a>
+                <a href="#faq" class="hover:text-gold-400 transition-colors">ВНЖ & Условия</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/255000000000?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BE%D0%B1%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B5%20Hidden%20Garden%20Zanzibar" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-700 bg-emerald-900/60 hover:bg-emerald-800 text-gold-400 hover:text-white transition-all text-xs uppercase tracking-wider font-semibold">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp
+                </a>
+                <button onclick="openLeadModal('Заказ консультации')" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-semibold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 transition-all transform hover:-translate-y-0.5">
+                    Консультация
+                </button>
+                <button id="mobileMenuBtn" class="md:hidden text-2xl text-gold-400 ml-1 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-emerald-950/95 border-b border-emerald-800/80 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col gap-4 text-sm font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">О проекте</a>
+                <a href="#waterfall" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Водопад & Локация</a>
+                <a href="#layouts" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Планировки и Цены</a>
+                <a href="#amenities" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Инфраструктура</a>
+                <a href="#calculator" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">Калькулятор дохода</a>
+                <a href="#faq" onclick="toggleMobileMenu()" class="text-slate-200 hover:text-gold-400 py-1">ВНЖ & Условия покупки</a>
+                <div class="pt-3 border-t border-emerald-800 flex gap-3">
+                    <a href="https://wa.me/255000000000" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-emerald-800/80 text-gold-400 text-xs font-semibold">
+                        <i class="fa-brands fa-whatsapp mr-1 text-emerald-400"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden hero-pattern">
+        <!-- Ambient Backdrops -->
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/50 via-emerald-950/80 to-emerald-950 z-0 pointer-events-none"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/2 -left-40 w-96 h-96 bg-emerald-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/80 border border-gold-500/40 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-6 shadow-inner backdrop-blur-md">
+                <i class="fa-solid fa-gem text-xs"></i> Первый клубный отельный комплекс в Нунгви
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold tracking-tight text-white max-w-5xl mx-auto leading-tight sm:leading-tight lg:leading-tight mb-6">
+                Hidden Garden Zanzibar: <span class="gold-gradient-text block mt-1">Самый высокий водопад и luxury-жизнь у океана</span>
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                5-этажный отельный комплекс с каскадным водопадом во внутреннем дворе. Всего 600 м от топового пляжа Nungwi без сильных отливов. Чистый арендный доход до 15-18% годовых в долларах США.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <button onclick="openLeadModal('Скачать презентацию и каталог')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold text-sm uppercase tracking-wider shadow-xl shadow-gold-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-arrow-down text-base"></i> Скачать презентацию и прайс
+                </button>
+                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-emerald-700 bg-emerald-900/60 hover:bg-emerald-800/80 text-white font-semibold text-sm uppercase tracking-wider backdrop-blur transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calculator text-gold-400"></i> Рассчитать доходность
+                </a>
+            </div>
+
+            <!-- Key Metric Counters Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-emerald-900/40 border border-emerald-800/60 backdrop-blur-md p-5 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/50">
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-gold-400">600 м</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1 block">До пляжа Nungwi</span>
+                    <span class="text-[11px] text-emerald-400 block mt-0.5">Океан без отливов</span>
+                </div>
+                <div class="bg-emerald-900/40 border border-emerald-800/60 backdrop-blur-md p-5 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/50">
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-gold-400">15–18%</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1 block">Прогнозируемый ROI</span>
+                    <span class="text-[11px] text-emerald-400 block mt-0.5">Валютная доходность USD</span>
+                </div>
+                <div class="bg-emerald-900/40 border border-emerald-800/60 backdrop-blur-md p-5 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/50">
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-gold-400">от 40%</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1 block">Первый взнос</span>
+                    <span class="text-[11px] text-emerald-400 block mt-0.5">Беспроцентная рассрочка</span>
+                </div>
+                <div class="bg-emerald-900/40 border border-emerald-800/60 backdrop-blur-md p-5 rounded-2xl text-center transform transition duration-300 hover:border-gold-500/50">
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-gold-400">от $100k</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-300 mt-1 block">ВНЖ Занзибара</span>
+                    <span class="text-[11px] text-emerald-400 block mt-0.5">Инвесторская виза</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-emerald-950 relative border-t border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+                <!-- Visual Card with Waterfall Concept -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-gold-500/30 shadow-2xl shadow-emerald-950/80 bg-emerald-900">
+                        <!-- Architectural illustration placeholder with elegant gradient composition -->
+                        <div class="h-96 sm:h-[480px] bg-gradient-to-tr from-emerald-950 via-emerald-900 to-teal-900 flex flex-col justify-end p-8 relative">
+                            <div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80');"></div>
+                            
+                            <div class="absolute top-6 left-6 bg-emerald-950/80 backdrop-blur-md px-4 py-2 rounded-xl border border-gold-500/40 flex items-center gap-2">
+                                <i class="fa-solid fa-water text-gold-400"></i>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-white">Высочайший приватный водопад</span>
+                            </div>
+
+                            <div class="relative z-10 bg-emerald-950/90 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50">
+                                <h4 class="font-serif text-lg font-bold text-gold-400 mb-1">Оазис посреди Нунгви</h4>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    Центральный атриум с 5-уровневым тропическим водопадом охлаждает воздух естественным образом и создает неповторимую атмосферу медитативного уединения.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Badge Float -->
+                    <div class="hidden sm:block absolute -bottom-6 -right-6 bg-gradient-to-br from-emerald-900 to-emerald-950 border border-gold-500/60 p-4 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-hotel text-2xl text-gold-400"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Управление отеля</p>
+                                <p class="text-sm font-bold text-white">100% пассивный доход</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content & Specifications -->
+                <div>
+                    <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 mb-3 block">Концепция проекта</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+                        Единственный в своем роде отельный комплекс с природной эстетикой
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6 font-light">
+                        <strong class="text-white font-medium">Hidden Garden Zanzibar</strong> — это клубная резиденция премиум-класса в самой популярной туристической локации острова Нунгви (Nungwi). Здесь нет отливов, уходящих на километры, вода всегда лазурная, а поток состоятельных туристов обеспечивает высокую круглогодичную заполняемость.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-compass-drafting text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">5 этажей отельной роскоши</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">Современная биофильная архитектура, террасы с тропическим озеленением, панорамные виды на закат и сад.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-umbrella-beach text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">Два топовых пляжа острова</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">600 метров до белоснежного песка Nungwi и всего 2 км до фешенебельного побережья Kendwa.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-key text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">Полный отельный сервис «Под ключ»</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">Международный отельный оператор берет на себя рекламу, бронирование, заселение, клининг и сохранность ваших апартаментов.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openLeadModal('Консультация по концепции и локации')" class="px-6 py-3.5 rounded-xl border border-gold-500/50 bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 font-semibold text-xs tracking-wider uppercase transition-all flex items-center gap-2">
+                        Получить детальный мастер-план <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layouts" class="py-24 bg-emerald-900/30 relative border-t border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Каталог недвижимости</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Выбор апартаментов и планировок</h2>
+                <p class="text-slate-300 text-sm sm:text-base font-light">
+                    Все юниты сдаются с дизайнерской отделкой, мебелью, сантехникой премиум-уровня и готовы к приему гостей или личному проживанию.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+                    <button onclick="filterUnits('all', this)" class="filter-btn active-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-gold-500 text-emerald-950 shadow-md">
+                        Все юниты
+                    </button>
+                    <button onclick="filterUnits('studio', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-emerald-900/80 border border-emerald-800 text-slate-300 hover:text-white hover:border-gold-500/50">
+                        Студии
+                    </button>
+                    <button onclick="filterUnits('1bed', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-emerald-900/80 border border-emerald-800 text-slate-300 hover:text-white hover:border-gold-500/50">
+                        1-Bedroom
+                    </button>
+                    <button onclick="filterUnits('2bed', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-emerald-900/80 border border-emerald-800 text-slate-300 hover:text-white hover:border-gold-500/50">
+                        2-Bedroom Deluxe
+                    </button>
+                    <button onclick="filterUnits('penthouse', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-emerald-900/80 border border-emerald-800 text-slate-300 hover:text-white hover:border-gold-500/50">
+                        Пентхаусы
+                    </button>
+                </div>
+            </div>
+
+            <!-- Units Grid -->
+            <div id="unitsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Unit Card 1: Studio Garden -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="studio">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Studio Garden View" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=Studio+Garden'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Хит для сдачи в аренду
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            38.5 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Studio «Tropical Zen»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">1-3 этажи</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Вид на внутренний оазис и каскадный водопад. Оптимальный порог входа для инвестиций.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-bed text-gold-500 mr-1.5"></i> Queen Size Bed</div>
+                                <div><i class="fa-solid fa-tree text-gold-500 mr-1.5"></i> Вид на сад</div>
+                                <div><i class="fa-solid fa-couch text-gold-500 mr-1.5"></i> Зона отдыха</div>
+                                <div><i class="fa-solid fa-shield text-gold-500 mr-1.5"></i> С меблировкой</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$68,500</span>
+                            </div>
+                            <button onclick="requestLayoutModal('Studio Tropical Zen', '$68,500', '38.5 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Card 2: 1-Bedroom Cascade -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="1bed">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="1-Bedroom Suite" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=1-Bedroom+Suite'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Максимальный спрос
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            56.0 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">1-Bedroom «Cascade Oasis»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">2-4 этажи</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Отдельная спальня, просторная терраса с панорамой тропического бассейна.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-door-open text-gold-500 mr-1.5"></i> 1 спальня + гостиная</div>
+                                <div><i class="fa-solid fa-water-ladder text-gold-500 mr-1.5"></i> Вид на водопад</div>
+                                <div><i class="fa-solid fa-expand text-gold-500 mr-1.5"></i> Терраса 12 м²</div>
+                                <div><i class="fa-solid fa-passport text-gold-500 mr-1.5"></i> Подходит под ВНЖ</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$105,000</span>
+                            </div>
+                            <button onclick="requestLayoutModal('1-Bedroom Cascade Oasis', '$105,000', '56.0 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Card 3: 2-Bedroom Deluxe -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="2bed">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="2-Bedroom Deluxe" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=2-Bedroom+Deluxe'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Для семейного отдыха
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            84.0 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">2-Bedroom «Ocean Breeze»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">3-4 этажи</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Две мастер-спальни, кухня-столовая, две ванные комнаты и двойная терраса.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-bath text-gold-500 mr-1.5"></i> 2 ванные комнаты</div>
+                                <div><i class="fa-solid fa-water text-gold-500 mr-1.5"></i> Панорама океана</div>
+                                <div><i class="fa-solid fa-utensils text-gold-500 mr-1.5"></i> Оборудованная кухня</div>
+                                <div><i class="fa-solid fa-passport text-gold-500 mr-1.5"></i> Гарантированный ВНЖ</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$168,000</span>
+                            </div>
+                            <button onclick="requestLayoutModal('2-Bedroom Ocean Breeze', '$168,000', '84.0 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Card 4: Penthouse Signature -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="penthouse">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Penthouse Royal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=Penthouse+Royal'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Эксклюзив (Всего 2 лота)
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            135.0 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Penthouse «Royal Sky»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">5 этаж (Rooftop)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Личная терраса на крыше с джакузи, круговая панорама Индийского океана и заката.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-hot-tub-person text-gold-500 mr-1.5"></i> Приватное джакузи</div>
+                                <div><i class="fa-solid fa-cloud-sun text-gold-500 mr-1.5"></i> 360° Sunset View</div>
+                                <div><i class="fa-solid fa-layer-group text-gold-500 mr-1.5"></i> Терраса 45 м²</div>
+                                <div><i class="fa-solid fa-crown text-gold-500 mr-1.5"></i> VIP консьерж</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$275,000</span>
+                            </div>
+                            <button onclick="requestLayoutModal('Penthouse Royal Sky', '$275,000', '135.0 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Card 5: Studio Sea View -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="studio">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Studio Sea View" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=Studio+Sea+View'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Быстрый выкуп
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            42.0 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">Studio «Azure Horizon»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">4 этаж</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Улучшенная планировка с рабочим местом и открытым видом на бирюзовый океан.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-water text-gold-500 mr-1.5"></i> Вид на море</div>
+                                <div><i class="fa-solid fa-wind text-gold-500 mr-1.5"></i> Балкон-лаунж</div>
+                                <div><i class="fa-solid fa-wifi text-gold-500 mr-1.5"></i> High-Speed Starlink</div>
+                                <div><i class="fa-solid fa-hotel text-gold-500 mr-1.5"></i> Готовый бизнес</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$78,000</span>
+                            </div>
+                            <button onclick="requestLayoutModal('Studio Azure Horizon', '$78,000', '42.0 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Card 6: 1-Bedroom Palm -->
+                <div class="unit-card group bg-emerald-900/50 border border-emerald-800/80 hover:border-gold-500/60 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gold-500/10 flex flex-col" data-type="1bed">
+                    <div class="relative h-60 overflow-hidden bg-emerald-950">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="1-Bedroom Palm Garden" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/0c221d/D4AF37?text=1-Bedroom+Garden'">
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-gold-400 border border-gold-500/30">
+                            Личный сад
+                        </div>
+                        <div class="absolute bottom-4 right-4 bg-emerald-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white">
+                            62.0 м²
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-serif text-xl font-bold text-white">1-Bedroom «Garden Prime»</h3>
+                                <span class="text-xs text-emerald-400 font-semibold">1 этаж</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">Прямой выход к бассейну и пальмовой аллее. Обособленный вход и приватная веранда.</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 py-3 border-y border-emerald-800/60 text-xs text-slate-300 mb-4">
+                                <div><i class="fa-solid fa-person-swimming text-gold-500 mr-1.5"></i> Swim-up выход</div>
+                                <div><i class="fa-solid fa-tree text-gold-500 mr-1.5"></i> Приватный сад</div>
+                                <div><i class="fa-solid fa-couch text-gold-500 mr-1.5"></i> Lounge-патио</div>
+                                <div><i class="fa-solid fa-passport text-gold-500 mr-1.5"></i> Подходит под ВНЖ</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs text-slate-400 uppercase tracking-wider">Цена от:</span>
+                                <span class="font-serif text-2xl font-bold text-gold-400">$118,000</span>
+                            </div>
+                            <button onclick="requestLayoutModal('1-Bedroom Garden Prime', '$118,000', '62.0 м²')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider transition-colors">
+                                Запросить планировку и PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-24 bg-emerald-950 relative border-t border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">5-звездочный сервис</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Инфраструктура мирового уровня</h2>
+                <p class="text-slate-300 text-sm sm:text-base font-light">
+                    Все удобства современного курорта для постоянных резидентов и платежеспособных туристов.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Amenity 1 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Инфинити-бассейн & Лагуна</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Большой бассейн с зоной для загара, детской безопасной зоной и шезлонгами в окружении тропической зелени.
+                    </p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Каскадный водопад-атриум</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Уникальная архитектурная фишка проекта — звуки живой воды, прохлада и главная фотозона для гостей в соцсетях.
+                    </p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Ресторан с авторской кухней</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Ресторан морепродуктов, фреш-бар у бассейна и кофейня со свежим занзибарским кофе для гостей и собственников.
+                    </p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Фитнес-центр & SPA</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Панорамный спортзал с кардиозоной, зона йоги под открытым небом и спа-кабинеты с массажем.
+                    </p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Отельный сервис & Ресепшн</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Круглосуточный консьерж-сервис, трансферы из аэропорта, организация морских прогулок и сафари по Танзании.
+                    </p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="p-8 rounded-3xl bg-emerald-900/40 border border-emerald-800/60 hover:border-gold-500/50 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-emerald-950 transition duration-300">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Безопасность 24/7 & Генератор</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Закрытая охраняемая территория, видеонаблюдение, бесперебойный резервный генератор и опреснительная система.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-24 bg-gradient-to-b from-emerald-900/30 to-emerald-950 border-t border-emerald-900/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Инвестиционная модель</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Интерактивный калькулятор доходности</h2>
+                <p class="text-slate-300 text-sm sm:text-base font-light">
+                    Рассчитайте потенциальный доход от посуточной отельной сдачи и окупаемость вложений в Hidden Garden.
+                </p>
+            </div>
+
+            <div class="bg-emerald-900/50 border border-gold-500/30 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-md max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Sliders Side -->
+                    <div class="lg:col-span-7 space-y-8">
+                        <!-- Unit Price Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Стоимость апартаментов ($)</label>
+                                <span id="valPrice" class="font-serif text-xl font-bold text-gold-400">$105,000</span>
+                            </div>
+                            <input id="sliderPrice" type="range" min="68000" max="280000" step="5000" value="105000" class="w-full accent-gold-500 bg-emerald-950 h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                                <span>$68,000 (Студия)</span>
+                                <span>$280,000 (Пентхаус)</span>
+                            </div>
+                        </div>
+
+                        <!-- Average Daily Rate (ADR) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Средняя ставка в сутки ($/ночь)</label>
+                                <span id="valDailyRate" class="font-serif text-xl font-bold text-gold-400">$140</span>
+                            </div>
+                            <input id="sliderDailyRate" type="range" min="70" max="350" step="10" value="140" class="w-full accent-gold-500 bg-emerald-950 h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                                <span>$70 (Низкий сезон)</span>
+                                <span>$350 (Люкс/Пик)</span>
+                            </div>
+                        </div>
+
+                        <!-- Occupancy Rate Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Среднегодовая загрузка (%)</label>
+                                <span id="valOccupancy" class="font-serif text-xl font-bold text-gold-400">70%</span>
+                            </div>
+                            <input id="sliderOccupancy" type="range" min="45" max="85" step="5" value="70" class="w-full accent-gold-500 bg-emerald-950 h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                                <span>45% (Консервативно)</span>
+                                <span>85% (Высокий сезон в Нунгви)</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-950/70 border border-emerald-800 text-[12px] text-slate-400 flex items-center gap-3">
+                            <i class="fa-solid fa-circle-info text-gold-400 text-lg flex-shrink-0"></i>
+                            <span>Расчет учитывает отельную комиссию управления и операционные расходы (30% от валовой выручки).</span>
+                        </div>
+                    </div>
+
+                    <!-- Output Results Card -->
+                    <div class="lg:col-span-5 bg-emerald-950 border border-gold-500/40 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden">
+                        <div class="absolute -top-16 -right-16 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl"></div>
+
+                        <span class="text-[11px] uppercase tracking-widest text-slate-400 font-semibold block mb-1">Прогнозируемый чистый доход</span>
+                        <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-400 mb-6" id="calcNetAnnual">$24,990 <span class="text-xs text-slate-400 font-sans">/ год</span></div>
+
+                        <div class="space-y-4 text-left border-t border-b border-emerald-800 py-4 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-slate-400">В месяц чистыми:</span>
+                                <span id="calcMonthly" class="text-sm font-bold text-white">$2,082</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-slate-400">Чистая рентабельность (ROI):</span>
+                                <span id="calcRoi" class="text-sm font-bold text-emerald-400">16.8%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-slate-400">Срок окупаемости:</span>
+                                <span id="calcPayback" class="text-sm font-bold text-white">~5.9 лет</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-slate-400">Первый взнос (40%):</span>
+                                <span id="calcDownPayment" class="text-sm font-bold text-gold-400">$42,000</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openLeadModal('Получить детальный инвест-план с графиком выплат')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold text-xs uppercase tracking-wider shadow-lg transition-transform transform hover:-translate-y-0.5">
+                            Зафиксировать расчет в PDF
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-emerald-950 relative border-t border-emerald-900/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Юридическая чистота и ВНЖ</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-slate-300 text-sm sm:text-base font-light">
+                    Все подробности покупки недвижимости иностранными гражданами на Занзибаре (Танзания).
+                </p>
+            </div>
+
+            <div class="space-y-4" id="faqAccordion">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border border-emerald-800/80 rounded-2xl bg-emerald-900/30 overflow-hidden transition-colors">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-serif font-semibold text-white text-base sm:text-lg">Как получить ВНЖ Занзибара при покупке?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-emerald-800/40 pt-4">
+                        По законам Занзибара (ZIPA / Strategic Investment Status), иностранный инвестор при покупке недвижимости стоимостью от <strong>$100,000</strong> получает право на оформление ВНЖ (Residence Permit) для себя и членов своей семьи. ВНЖ дает право проживания, открытия счетов в местных банках и свободного въезда.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-emerald-800/80 rounded-2xl bg-emerald-900/30 overflow-hidden transition-colors">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-serif font-semibold text-white text-base sm:text-lg">Каковы условия рассрочки и первоначального взноса?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-emerald-800/40 pt-4">
+                        Мы предлагаем комфортную беспроцентную рассрочку от застройщика на весь период строительства:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Первоначальный взнос — от 40% при подписании контракта.</li>
+                            <li>Остаток 60% распределяется равными долями или привязывается к этапам строительства до ввода в эксплуатацию.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-emerald-800/80 rounded-2xl bg-emerald-900/30 overflow-hidden transition-colors">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-serif font-semibold text-white text-base sm:text-lg">Форма собственности: freehold или leasehold?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-emerald-800/40 pt-4">
+                        В Танзании и на Занзибаре земля находится в государственной собственности, поэтому иностранцы приобретают недвижимость на правах долгосрочной аренды (Leasehold на 33–99 лет) с официальной регистрацией в земельном кадастре и автоматическим правом продления. Сделка проходит с полным государственным нотариальным сопровождением.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border border-emerald-800/80 rounded-2xl bg-emerald-900/30 overflow-hidden transition-colors">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-serif font-semibold text-white text-base sm:text-lg">Как устроено отельное управление и выплата дохода?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 transition-transform duration-300 text-sm"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-emerald-800/40 pt-4">
+                        Управляющая компания берет на себя все заботы: маркетинг на Booking/Airbnb, консьерж-сервис, клининг, ремонт и регулярный технический надзор. Доход перечисляется ежеквартально в долларах США на ваш счет в любом международном банке. Личный кабинет инвестора позволяет отслеживать загрузку и финансовые отчеты онлайн.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-emerald-900/40 relative border-t border-emerald-800/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-emerald-950 to-emerald-900 border border-gold-500/40 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="max-w-2xl mx-auto text-center mb-8">
+                    <span class="text-xs font-serif font-bold uppercase tracking-[0.25em] text-gold-400 block mb-2">Индивидуальный подбор</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-3">Забронируйте лучшие видовые апартаменты</h2>
+                    <p class="text-slate-300 text-sm">
+                        Оставьте заявку, чтобы получить закрытый каталог с планировками, видео со стройплощадки и индивидуальный расчет рассрочки.
+                    </p>
+                </div>
+
+                <form onsubmit="handleLeadSubmit(event)" class="max-w-xl mx-auto space-y-4">
+                    <input type="hidden" name="source" value="Главная форма сайта">
+                    
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Ваше имя</label>
+                        <input type="text" required placeholder="Константин" class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/80 border border-emerald-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Телефон / WhatsApp</label>
+                            <input type="tel" required placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/80 border border-emerald-700/80 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Планируемый бюджет</label>
+                            <select class="w-full px-4 py-3.5 rounded-xl bg-emerald-950/80 border border-emerald-700/80 text-white focus:outline-none focus:border-gold-500 text-sm">
+                                <option value="До $80,000">До $80,000</option>
+                                <option value="$80,000 - $120,000" selected>$80,000 - $120,000</option>
+                                <option value="$120,000 - $200,000">$120,000 - $200,000</option>
+                                <option value="Более $200,000">Более $200,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Удобный способ связи</label>
+                        <div class="grid grid-cols-3 gap-3 text-xs">
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-950 border border-emerald-700/80 cursor-pointer hover:border-gold-500/60">
+                                <input type="radio" name="contactMethod" value="WhatsApp" checked class="accent-gold-500">
+                                <span>WhatsApp</span>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-950 border border-emerald-700/80 cursor-pointer hover:border-gold-500/60">
+                                <input type="radio" name="contactMethod" value="Telegram" class="accent-gold-500">
+                                <span>Telegram</span>
+                            </label>
+                            <label class="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-950 border border-emerald-700/80 cursor-pointer hover:border-gold-500/60">
+                                <input type="radio" name="contactMethod" value="Телефон" class="accent-gold-500">
+                                <span>Звонок</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-emerald-950 font-bold text-xs uppercase tracking-widest shadow-xl transition-all transform hover:-translate-y-0.5 mt-2">
+                        Получить каталог и спецпредложение
+                    </button>
+
+                    <p class="text-[11px] text-center text-slate-400 mt-2">
+                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Никакого спама.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-emerald-950 border-t border-emerald-900 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-emerald-900">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border border-gold-500/50 flex items-center justify-center bg-emerald-900">
+                        <i class="fa-solid fa-water text-gold-500 text-xs"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-sm font-bold text-white tracking-widest uppercase">Hidden Garden</span>
+                        <span class="text-[9px] tracking-widest text-gold-400 block uppercase">Nungwi, Zanzibar, Tanzania</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <a href="#about" class="hover:text-gold-400 transition-colors">О комплексе</a>
+                    <a href="#layouts" class="hover:text-gold-400 transition-colors">Планировки</a>
+                    <a href="#calculator" class="hover:text-gold-400 transition-colors">Доходность</a>
+                    <a href="#faq" class="hover:text-gold-400 transition-colors">ВНЖ & FAQ</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/255000000000" target="_blank" class="w-9 h-9 rounded-full bg-emerald-900 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center text-gold-400 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
+                    <a href="https://t.me/" target="_blank" class="w-9 h-9 rounded-full bg-emerald-900 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center text-gold-400 transition-colors">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+                <p>© 2026 Hidden Garden Zanzibar. Все права защищены. Эксклюзивные продажи апартаментов в Нунгви.</p>
+                <p>Информация носит ознакомительный характер и не является публичной офертой.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="leadModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-emerald-950/80 backdrop-blur-md transition-opacity">
+        <div class="bg-emerald-900 border border-gold-500/50 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 mx-auto mb-3">
+                    <i class="fa-solid fa-file-pdf text-xl"></i>
+                </div>
+                <h3 id="modalTitle" class="font-serif text-2xl font-bold text-white">Запрос планировки и условий</h3>
+                <p id="modalSubtitle" class="text-xs text-slate-300 mt-1">Отправим подробный PDF-пакет и финансовый план в WhatsApp за 2 минуты.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <input type="hidden" id="modalUnitParam" name="unit" value="">
+                
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">Ваше имя</label>
+                    <input type="text" required placeholder="Ваше имя" class="w-full px-4 py-3 rounded-xl bg-emerald-950 border border-emerald-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-1">WhatsApp или Телефон</label>
+                    <input type="tel" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 rounded-xl bg-emerald-950 border border-emerald-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-emerald-950 font-bold text-xs uppercase tracking-wider shadow-lg transition-colors">
+                    Отправить материалы в WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-emerald-900 border border-gold-500 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <div>
+            <p class="font-semibold text-xs text-white" id="toastMessage">Заявка успешно отправлена!</p>
+            <p class="text-[10px] text-slate-300">Наш эксперт свяжется с вами в течение 10 минут.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+        // Filter Units
+        function filterUnits(category, btnElement) {
+            const cards = document.querySelectorAll('.unit-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.className = 'filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-emerald-900/80 border border-emerald-800 text-slate-300 hover:text-white hover:border-gold-500/50';
+            });
+            btnElement.className = 'filter-btn active-tab px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-gold-500 text-emerald-950 shadow-md';
+
+            cards.forEach(card => {
+                const type = card.getAttribute('data-type');
+                if (category === 'all' || type === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ Accordion
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = !content.classList.contains('hidden');
+
+            document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.faq-toggle i').forEach(ic => ic.style.transform = 'rotate(0deg)');
+
+            if (!isOpen) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // ROI Calculator Logic
+        const sliderPrice = document.getElementById('sliderPrice');
+        const sliderDailyRate = document.getElementById('sliderDailyRate');
+        const sliderOccupancy = document.getElementById('sliderOccupancy');
+
+        const valPrice = document.getElementById('valPrice');
+        const valDailyRate = document.getElementById('valDailyRate');
+        const valOccupancy = document.getElementById('valOccupancy');
+
+        const calcNetAnnual = document.getElementById('calcNetAnnual');
+        const calcMonthly = document.getElementById('calcMonthly');
+        const calcRoi = document.getElementById('calcRoi');
+        const calcPayback = document.getElementById('calcPayback');
+        const calcDownPayment = document.getElementById('calcDownPayment');
+
+        function updateCalculator() {
+            const price = parseFloat(sliderPrice.value);
+            const dailyRate = parseFloat(sliderDailyRate.value);
+            const occupancy = parseFloat(sliderOccupancy.value) / 100;
+
+            valPrice.textContent = `$${price.toLocaleString()}`;
+            valDailyRate.textContent = `$${dailyRate}`;
+            valOccupancy.textContent = `${Math.round(occupancy * 100)}%`;
+
+            // 365 days, gross revenue
+            const rentedDays = 365 * occupancy;
+            const grossAnnual = rentedDays * dailyRate;
+            
+            // Net margin after hotel management and operational expenses (approx 70% net to owner)
+            const netAnnual = grossAnnual * 0.70;
+            const netMonthly = netAnnual / 12;
+            const roiPercent = (netAnnual / price) * 100;
+            const paybackYears = price / netAnnual;
+            const downPayment = price * 0.40;
+
+            calcNetAnnual.innerHTML = `$${Math.round(netAnnual).toLocaleString()} <span class="text-xs text-slate-400 font-sans">/ год</span>`;
+            calcMonthly.textContent = `$${Math.round(netMonthly).toLocaleString()}`;
+            calcRoi.textContent = `${roiPercent.toFixed(1)}%`;
+            calcPayback.textContent = `~${paybackYears.toFixed(1)} лет`;
+            calcDownPayment.textContent = `$${Math.round(downPayment).toLocaleString()}`;
+        }
+
+        [sliderPrice, sliderDailyRate, sliderOccupancy].forEach(input => {
+            input.addEventListener('input', updateCalculator);
+        });
+        updateCalculator();
+
+        // Modals & Lead Handling
+        const leadModal = document.getElementById('leadModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalUnitParam = document.getElementById('modalUnitParam');
+
+        function openLeadModal(titleText) {
+            modalTitle.textContent = titleText || 'Заказ консультации';
+            modalSubtitle.textContent = 'Оставьте контакты для оперативной связи и подбора лота.';
+            modalUnitParam.value = titleText;
+            leadModal.classList.remove('hidden');
+            leadModal.classList.add('flex');
+        }
+
+        function requestLayoutModal(unitName, price, sqm) {
+            modalTitle.textContent = `Планировка: ${unitName}`;
+            modalSubtitle.textContent = `Цена ${price} • Площадь ${sqm}. Отправим архитектурный план и расчет рассрочки.`;
+            modalUnitParam.value = unitName;
+            leadModal.classList.remove('hidden');
+            leadModal.classList.add('flex');
+        }
+
+        function closeLeadModal() {
+            leadModal.classList.add('hidden');
+            leadModal.classList.remove('flex');
+        }
+
+        leadModal.addEventListener('click', (e) => {
+            if (e.target === leadModal) closeLeadModal();
+        });
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            const messageEl = document.getElementById('toastMessage');
+            if (msg) messageEl.textContent = msg;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4500);
+        }
+
+        function handleLeadSubmit(e) {
+            e.preventDefault();
+            showToast('Заявка принята! Менеджер подготовит каталог.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeLeadModal();
+            showToast('Материалы отправлены! Ожидайте сообщение в WhatsApp.');
+            e.target.reset();
+        }
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl', 'bg-emerald-950/95');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
